@@ -1,0 +1,32 @@
+<div id="container"></div>
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+<script>
+ const myTheme = {
+   render(state, instance) {
+     const container = document.createElement('div')
+     container.lang = "en-US"
+     container.className = 'gitment-container gitment-root-container'
+     container.appendChild(instance.renderHeader(state, instance))
+     container.appendChild(instance.renderEditor(state, instance))
+     container.appendChild(instance.renderComments(state, instance))
+     container.appendChild(instance.renderFooter(state, instance))
+     return container
+   }
+ }
+
+ var gitment = new Gitment({
+   id: window.location.pathname,
+   owner: '{{ site.github_username }}',
+   repo: '{{ site.repo }}',
+   oauth: {
+     client_id: '327616ffcbf47990467a',
+     client_secret: '90896581fb0afa49ab3af8240e9c2b0652984b43',
+   },
+   theme: myTheme,
+ });
+
+ gitment.render('container');
+</script>

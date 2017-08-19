@@ -1,0 +1,233 @@
+body {
+  color: #333;
+  background-color: #C7EDCC;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  background-image: url("/assets/images/bk.jpg");
+}
+
+img {
+  max-width: 100%;
+}
+
+.avatar {
+  border-radius: 6px;
+  height: 230px;
+  width: 230px;
+}
+
+#goToTop{
+  display:block;
+  width:40px;
+  height:40px;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  border-radius:10px 10px 10px 10px;
+  text-decoration:none;
+  display:none;
+}
+
+#goToTop span{
+  display:block;
+  color:#dddddd;
+}
+
+#goToTop span:hover {
+  color: #cccccc;
+}
+
+.header-inner {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 240px;
+    background: #fff;
+}
+
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: center;
+
+  .menu-item {
+      display: block;
+      margin: 0;
+      list-style: none;
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+.post-meta {
+    margin: 3px 0 60px 0;
+    color: #999;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.post-tag:before {
+    content: "\f02b";
+    font-family: FontAwesome;
+    padding-right: .5em;
+}
+.post-tag:hover {
+    text-decoration: none;
+    background: #6a9fb5;
+    color: #fff
+}
+.post-tag {
+    display: inline-block;
+    background: rgba(106,159,181,0.15);
+    padding: 0 .5rem;
+    margin-right: .5rem;
+    border-radius: 4px;
+    color: #6a9fb5;
+    font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 90%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+/* layout */
+#markdown-toc {
+  display: none;
+}
+
+.post {
+  font-size: 16px;
+
+  .left {
+    float: left;
+    padding: 20px 30px;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f8f8fd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 30px rgba(10, 10, 0, 0.1) inset;
+  }
+
+  .right {
+    float: left;
+    padding-left: 20px;
+    top: 0;
+  }
+
+  .anchor {
+    display: none;
+  }
+
+  /**/
+  .right .side {
+    box-sizing: border-box;
+    background-color: #f8f8fd;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;
+    padding-bottom: 1px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .right .side > div {
+    padding: 12px 15px;
+    border-bottom: 1px solid #c0c0c0;
+    font-weight: bold;
+  }
+
+  .right .content-ul {
+    overflow-y: auto;
+    padding-right: 10px;
+    line-height: 1.8;
+    padding-left: 35px;
+  }
+
+  .right .content-ul ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .right .side a {
+    color: #4d6dad;
+    transition: 0.5s ease;
+  }
+
+  /** title **/
+  .label {
+    margin-top: 16px;
+    overflow: hidden;
+  }
+
+  .label .label-card {
+    float: left;
+    margin-right: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .label .label-card i {
+    padding-right: 5px;
+    color: #6b6a6a;
+  }
+
+  /* pagination */
+  .pagination {
+    width: 100%;
+  }
+
+  .pagination .newer {
+    float: right;
+  }
+
+  .pagination .older {
+    float: left;
+  }
+
+  /** for small screen */
+  @media (max-width: 768px) {
+    .right {
+      display: none;
+    }
+
+    .gitment-container .gitment-editor-container {
+      position: relative;
+      min-height: 60px;
+      padding-left: 0px !important;
+      margin: 19px 0;
+    }
+
+    .gitment-editor-avatar svg {
+      display: none;
+    }
+  }
+}
+
+
+/* for article titles */
+h8 {
+    font-size: 1.2em;
+    text-indent: 4px;
+    border-radius: 4px;
+    padding: 6px 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    box-shadow: 0px 5px 5px #9FB6CD;
+    border-left: 6px solid #1874CD;
+    position: relative;
+}
+
+h3 {
+    font-size: 1.2em;
+    text-indent: 4px;
+    border-radius: 4px;
+    padding: 6px 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background: #B9D3EE;
+    box-shadow: 0px 5px 5px #9FB6CD;
+    border-left: 6px solid #1874CD;
+    position: relative;
+}

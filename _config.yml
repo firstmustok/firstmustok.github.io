@@ -1,0 +1,22 @@
+#baseurl:  /
+
+# Setup
+title:               Study Notes
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+
+# enable the comment
+comments: true
+
+# comment repository
+github_username: firstmustok
+repo: study
+
+
+
