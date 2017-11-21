@@ -90,7 +90,7 @@ naver-site-verification  :
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-#  avatar           : "/assets/images/michael-rose.jpg"
+  avatar           : "/assets/images/avatar.gif"
   bio              : "Do one thing at a time, and do well."
   location         : "Singapore, SG"
   email            :
