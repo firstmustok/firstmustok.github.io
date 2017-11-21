@@ -12,7 +12,7 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "my pages"
+title                    : "Do one thing at a time, and do well."
 title_separator          : "-"
 name                     : &name "Wallace Young" # &name is a YAML anchor which can be *referenced later
 description              : &description "A flexible Jekyll theme for your blog or site with a minimalist aesthetic."
@@ -23,7 +23,7 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "staticman_v2" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman_v2", "staticman" "custom"
+  provider               : false #"staticman_v2" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman_v2", "staticman" "custom"
   disqus:
     shortname            :
   discourse:
@@ -31,7 +31,7 @@ comments:
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
+    num_posts            : 10 # 5 (default)
     colorscheme          : # "light" (default), "dark"
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
@@ -91,7 +91,7 @@ naver-site-verification  :
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
 #  avatar           : "/assets/images/michael-rose.jpg"
-  bio              : "Time traveling, developer."
+  bio              : "Do one thing at a time, and do well."
   location         : "Singapore, SG"
   email            :
   uri              : "https://firstmustok.github.io"
@@ -195,7 +195,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
@@ -258,10 +258,12 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# permalink: /:categories/:title/
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+
+# timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Singapore
 
 
 # Plugins (previously gems:)
