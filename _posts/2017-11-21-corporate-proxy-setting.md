@@ -12,7 +12,7 @@ toc_label: "Proxy setup"
 
 # Configuring a corporate proxy
 
-You probably will need to configure all tools to bypass the corporate proxy in most company. First you can try to configure the `HTTP_PROXY` and `HTTPS_PROXY` environment variables or use a tool like Cntlm. But sometime this probably won’t be enough, so you will need to configure separately all the tools.
+You probably will need to configure all tools to bypass the corporate proxy in most company. First you can try to configure the `HTTP_PROXY` and `HTTPS_PROXY` environment variables or use a tool like Cntlm. But sometime this probably won't be enough, so you will need to configure separately all the tools.
 
 ## Introduction
 Supposing your proxy is defined with:
@@ -43,7 +43,7 @@ sudo make install
 ```
 
 #### 3) Mac OS
-```
+```shell
 $ brew install cntlm
 ==> Downloading https://homebrew.bintray.com/bottles/cntlm-0.92.3.high_sierra.bottle.1.tar.gz
 ######################################################################## 100.0%
@@ -54,7 +54,7 @@ Edit /usr/local/etc/cntlm.conf to configure Cntlm
 To have launchd start cntlm now and restart at startup:
   sudo brew services start cntlm
 ==> Summary
-🍺  /usr/local/Cellar/cntlm/0.92.3: 9 files, 144.6KB
+   /usr/local/Cellar/cntlm/0.92.3: 9 files, 144.6KB
 ```
 
 ### Edit the configuration cntlm.conf
@@ -71,19 +71,19 @@ If you don't use any tool like cntlm, you need to configure each tool individual
 
 ### Yarn configuration
 Use these commands:
-```
+```shell
 yarn config set proxy http://username:password@host:port
 yarn config set https-proxy http://username:password@host:port
 ```
 
 ### NPM configuration
 1. Use these commands:
-```
+```shell
 npm config set proxy http://username:password@host:port
 npm config set https-proxy http://username:password@host:port
 ```
-2. Or you can edit directly your ~/.npmrc file:
-```
+2. Or you can edit directly your `~/.npmrc` file:
+```properties
 proxy=http://username:password@host:port
 https-proxy=http://username:password@host:port
 https_proxy=http://username:password@host:port
@@ -95,8 +95,8 @@ https_proxy=http://username:password@host:port
 git config --global http.proxy http://username:password@host:port
 git config --global https.proxy http://username:password@host:port
 ```
-2. Or you can edit directly your ~/.gitconfig file:
-```
+2. Or you can edit directly your `~/.gitconfig` file:
+```ini
 [http]
       proxy = http://username:password@host:port
 [https]
@@ -104,8 +104,8 @@ git config --global https.proxy http://username:password@host:port
 ```
 
 ### Bower configuration
-Edit your ~/.bowerrc file:
-```
+Edit your `~/.bowerrc` file:
+```json
 {
     "proxy":"http://username:password@host:port",
     "https-proxy":"http://username:password@host:port"
@@ -113,11 +113,25 @@ Edit your ~/.bowerrc file:
 ```
 
 ### Maven configuration
-Edit the proxies session in your ~/.m2/settings.xml file
+Edit the proxies session in your `~/.m2/settings.xml` file
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <proxies>
+        <proxy>
+            <id>id</id>
+            <active>true</active>
+            <protocol>http</protocol>
+            <username>username</username>
+            <password>password</password>
+            <host>host</host>
+            <port>port</port>
+            <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+        </proxy>
+    </proxies>
 
 ### Maven Wrapper
-Create a new file .mvn/jvm.config inside the project folder and set the properties accordingly:
-```
+Create a new file `.mvn/jvm.config` inside the project folder and set the properties accordingly:
+```properties
 -Dhttp.proxyHost=host 
 -Dhttp.proxyPort=port 
 -Dhttps.proxyHost=host 
@@ -127,9 +141,9 @@ Create a new file .mvn/jvm.config inside the project folder and set the properti
 ```
 
 ### Gradle configuration
-Add the below in your gradle.properties file and in your gradle/wrapper/gradle-wrapper.properties file if you are downloading the wrapper over a proxy. 
-If you want to set these properties globally then add it in USER_HOME/.gradle/gradle.properties file
-```
+Add the below in your `gradle.properties` file and in your `gradle/wrapper/gradle-wrapper.properties` file if you are downloading the wrapper over a proxy. 
+If you want to set these properties globally then add it in `USER_HOME/.gradle/gradle.properties` file
+```properties
 systemProp.proxySet="true"
 
 systemProp.http.keepAlive="true"
@@ -149,28 +163,29 @@ systemProp.https.nonProxyHosts=local.net|some.host.com
 
 ### Docker
 1. Native Docker
-Depending on your OS, you have to edit a specific file (/etc/sysconfig/docker or /etc/default/docker).
-Then, you have to restart the docker service with: sudo service docker restart.
+Depending on your OS, you have to edit a specific file (`/etc/sysconfig/docker` or `/etc/default/docker`).
+Then, you have to restart the docker service with: `sudo service docker restart`.
 It will not apply to systemd. See this page from docker to configure the proxy.
 
-2. Docker with docker-machine
-You can create your docker-machine with:
+2. Docker with `docker-machine`
+You can create your `docker-machine` with:
 ```shell
 docker-machine create -d virtualbox \
     --engine-env HTTP_PROXY=http://username:password@host:port \
     --engine-env HTTPS_PROXY=http://username:password@host:port \
     default
 ```
-Or you can edit the file ~/.docker/machine/machines/default/config.json.
+Or you can edit the file `~/.docker/machine/machines/default/config.json`.
 
 ### Java Proxy settings
-```
+```properties
 http.proxyHost=host
 http.proxyPort=port
 http.proxyUser=username
 http.proxyPassword=password
 ```
 
+can set the jvm environment `JAVA_OPTS`
 ```bash
 export JAVA_OPTS="-Dhttp.proxyHost=host -Dhttp.proxyPort=port -Dhttps.proxyHost=host -Dhttps.proxyPort=port"
 ```
