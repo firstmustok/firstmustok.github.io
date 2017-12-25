@@ -1,0 +1,49 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> {{page.author}} 的简历</title>
+  <meta name="description" content="{{motto}}">
+  <meta name="keywords" content="工作,简历">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="{{ '/assets/css/resume.css' | absolute_url }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="title">
+                <img src="https://firstmustok.github.io/assets/images/avatar.gif" data-action="zoom">
+                <h1>{{page.author}} - 简历</h1>
+                <p>全栈攻城师一枚</p>
+            </div>
+            <ul class="side-info">
+                <li class="someRight">
+                    <dt><i class="fa fa-bookmark"></i>联系方式 CONTACT</dt>
+                    <dd><i class="fa fa-phone"></i>电话: {{page.mobile}}</dd>
+                    <dd><i class="fa fa-envelope-o"></i>邮箱: <a href="mailto:{{page.mail}}" target="_blank">{{page.mail}}</a></dd>
+                    <dd><i class="fa fa-qq"></i>QQ/微信: <a href="http://wpa.qq.com/msgrd?v=3&uin={{page.qq}}&site=qq&menu=yes" target="_blank">{{page.qq}}</a></dd>
+                </li>
+                <li class="someRight">
+                    <dt><i class="fa fa-bookmark"></i>应聘岗位 APPLICATION</dt>
+                    <dd>{{page.positions}}</dd>
+                </li>
+            </ul>
+            <div class="note">
+              <ul>
+                {% for note in page.note %}	
+                <li>{{note}}</li>
+              {% endfor %}
+              </ul>
+            </div>
+        </div>
+        <div class="main">
+            <ul class="main-info">
+                {{content}}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
