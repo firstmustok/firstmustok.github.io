@@ -5,7 +5,7 @@ author: 杨勋华
 mail: yangxunhua@qq.com
 mobile: (+65)86540850(新加坡)
 qq: 515701734
-positions: 中间件, JAVA
+positions: 架构师,高级开发工程师
 
 github: firstmustok
 blog: https://firstmustok.github.io
