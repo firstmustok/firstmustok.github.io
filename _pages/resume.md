@@ -3,9 +3,9 @@ title:  "Resume"
 
 author: 杨勋华
 mail: yangxunhua@qq.com
-mobile: (+65)86540850(新加坡)
+mobile: 17360262904
 qq: 515701734
-positions: 架构师,高级开发工程师
+positions: 高级开发工程师, 架构师
 
 github: firstmustok
 blog: https://firstmustok.github.io
@@ -71,7 +71,7 @@ layout: resume
 
 ## **{:.section-icon .fa}**项目与工作经验 Experience**
 {:.section}
-- **新加坡电信(新加坡) [2015.07 - ]**{:.campany-name}
+- **新加坡电信(新加坡) [2015.07 - 2018.03]**{:.campany-name}
   - *s*{:.project-circle} **Phone 8/X 线上抢购项目（mercury）**{:.project-title} **(JAVA工程师)**
     * 主要负责后台`API`开发。
     * 项目为期2个月，需紧急上线，`B/S`项目。功能包括用户兴趣注册，用户线上`iPhone`抢购，用户信息后台管理，邮件及短信发送等。项目采用`Restful`的微服务架构，前后端完全分离。
