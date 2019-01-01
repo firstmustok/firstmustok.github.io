@@ -49,7 +49,7 @@ layout: resume
       * 熟练使用`jstat`, `jmap`, `jstack`等进行系统性能分析及调优。
       * 熟悉`TCP`, `HTTP`等协议, 掌握运用工具`tcpdump`/[`wireshark`][wireshark]进行问题定位。
       * 熟悉[`Apache`][Apache]，[`Tomcat`][Tomcat]/`WebLogic`等软件， 以及搭建[`ELK`][ELK]日志监控方案。
-      * 熟悉`SQL`/`NoSQL`，并能熟练使用`Oracle`/`MySQL`/`PostgreSQL`, `Redis`/`MongoDB`。
+      * 熟悉`SQL`/`NoSQL`，并能熟练使用`Oracle`/`MySQL`/`PostgreSQL`, [`Redis`][Redis]/[`MongoDB`][MongoDB]。
     {:.project}
   {:.campany}
   - 前端
@@ -90,7 +90,7 @@ layout: resume
     * 慧选项目项目主要为京东运营提供选品工具，可以支持对商品属性各种维度的筛选。
       * 由于提供各种维度及模糊查询需求，最后将数据存储在[`Elasticsearch`][Elasticsearch]中。
       * 平台化改造过程中，将业务相关的模块进行抽象改造，通过配置利用工厂模式进行整合，同时采用分库分表设计隔离故障，提升系统可用性; 平台化后大大缩短了新业务线接入的时间，以及减少了重复开发的成本。
-      * 为了筛选结果更准确进行实时化改造，接入商品价格，促销等消息。由于上游消息量巨大，但我们关心的商品集很小，利用`Redis`缓存了我们关心商品全量集合做为白名单，过滤掉大量无效的消息。抗住了双11零点巨大流量冲击。
+      * 为了筛选结果更准确进行实时化改造，接入商品价格，促销等消息。由于上游消息量巨大，但所关心的商品集很小，利用[`Redis`][Redis]缓存了全量商品集合做为白名单，从而过滤掉大量无效的消息。轻松扛住了像双11零点巨大流量冲击。
       {:.problems}
   {:.project}
 {:.campany}
@@ -205,4 +205,7 @@ layout: resume
 [Swagger]: https://swagger.io/ "The Best APIs are Built with Swagger Tools"
 
 [Elasticsearch]: https://www.elastic.co/ "Elasticsearch is a highly scalable open-source full-text search and analytics engine."
+[Redis]: https://redis.io/ "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker."
+[MongoDB]: https://www.mongodb.com/ "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need"
+
 
