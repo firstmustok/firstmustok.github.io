@@ -17,7 +17,7 @@ note:
  - 
  - "Stay foolish, stay hungry."
 
-last_modified_at: 2017-11-23
+last_modified_at: 2019-01-01
 
 permalink: resume.html
 layout: resume
@@ -31,7 +31,6 @@ layout: resume
   - **毕业院校:** 本科 / 武汉大学 / 计算机科学与技术
   - **工作年限:** 7年
   - **GitHub:** [https://www.github.com/{{github}}](https://www.github.com/{{github}})
-  - **博客:** [{{page.blog}}]({{page.blog}})
 {:.basic}
 
 ## **{:.section-icon .fa}**技能清单 SKILL**
@@ -57,20 +56,45 @@ layout: resume
     - *s*{:.project-circle}
       * 熟悉常用Web技术, `HTML`/`Javascript`/`CSS`/`AJAX`等。
       * 熟悉常用前端库 [`jQuery`][jQuery], [`Ractive`][Ractive], [`Requirejs`][Requirejs]等。
-      * 熟练使用工具, [`webpack`][Webpack]/[`gulp`][gulp]。
-      * 了解前端框架库[`React`][React]/[`Angular`][Angular]及前端工程解决方案。
+      * 熟悉前端框架库[`React`][React]/[`Angular`][Angular]等技术。
+      * 熟练前端常用工具使用, 如[`webpack`][Webpack]/[`gulp`][gulp]。
     {:.project}
   - DevOps
     - *s*{:.project-circle}
-      * 熟悉[`Docker`][Docker]环境搭建与使用
+      * 熟悉[`Docker`][Docker]环境搭建与使用,了解主流的容器编排[`Kubernetes`][Kubernetes], [`Swarm`][Swarm]技术。
       * 熟悉`Linux`基本命令与`shell`脚本编写，如能熟练使用`awk`及`sed`进行文本处理。
-      * 熟悉[`Jenkins`][Jenkins], [`Bamboo`][Bamboo]等持续集成软件使用配置, 搭建一套`DevOps`环境。
-      * 熟练搭建[`Nagios`][Nagios]环境对线上系统性能监控。
+      * 熟悉[`Jenkins`][Jenkins], [`Bamboo`][Bamboo]等持续集成软件使用配置, 能够根据需求快速搭建一套`DevOps`环境。
+      * 熟练搭建[`Nagios`][Nagios]环境对线上系统性能及异常监控。
     {:.project}
   {:.campany}
 
 ## **{:.section-icon .fa}**项目与工作经验 Experience**
 {:.section}
+- **京东成都研究院 [2018.04 - 至今]**{:.campany-name}
+  - *s*{:.project-circle} **启明星项目**{:.project-title} **(JAVA工程师)**
+    * 主要负责后台一，二, 四期后台`API`开发, 期间指导实习生完成三期需求开发。
+    * 本项目主要是针对大快消事业群下6大事业部(市场营销部、消费品事业部、全球购业务部、生鲜事业部、美妆业务部)，有针对性的,不同类型的可视化报表，方便其了解各种营销数据，提升效率。
+      * 由于数据量大，采用简单分表策略, 减少单表查询时间。
+      * 利用[`EhCache`][EhCache]作本地缓存，减少`API`响应时间。
+      * 项目中引入[`Swagger`][Swagger]规范化`Restful` `API`, 减少与前端交流成本。同时开发一个[`MyBatis`][MyBatis]插件，完成表结构生成`DTO`并根据表字段注释添加相关文档注解。
+      {:.problems}
+  - *s*{:.project-circle} **7FRESH项目**{:.project-title} **(AVA工程师)**
+    * 参与项目实时订单入库模块优化。
+    * `7RFESH`项目主要为京东`7FRESH`运营提供相关的数据分析,实时大屏等功能。
+      * 由于业务特殊性导致性能问题，将订单数据从`MongoDB`迁移到`MySQL`,使得查询性能提升4倍。
+      * 订单数据入库过程中，减少分布式锁使用，利用`MySQL` **`INSERT ON DUPLICATE KEY UPDATE`**特性解决入库冲突问题，10倍提升了消息消费的性能。
+      * 重构订单数据入库流程, 使用得后续各种订单数据接入更容易,标准化。
+      {:.problems}
+  - *s*{:.project-circle} **京东慧选项目**{:.project-title} **(JAVA工程师)**
+    * 参与项目平台化、实时化方案设计。
+    * 慧选项目项目主要为京东运营提供选品工具，可以支持对商品属性各种维度的筛选。
+      * 由于提供各种维度及模糊查询需求，最后将数据存储在[`Elasticsearch`][Elasticsearch]中。
+      * 平台化改造过程中，将业务相关的模块进行抽象改造，通过配置利用工厂模式进行整合，同时采用分库分表设计隔离故障，提升系统可用性; 平台化后大大缩短了新业务线接入的时间，以及减少了重复开发的成本。
+      * 为了筛选结果更准确进行实时化改造，接入商品价格，促销等消息。由于上游消息量巨大，但我们关心的商品集很小，利用`Redis`缓存了我们关心商品全量集合做为白名单，过滤掉大量无效的消息。抗住了双11零点巨大流量冲击。
+      {:.problems}
+  {:.project}
+{:.campany}
+
 - **新加坡电信(新加坡) [2015.07 - 2018.03]**{:.campany-name}
   - *s*{:.project-circle} **Phone 8/X 线上抢购项目（mercury）**{:.project-title} **(JAVA工程师)**
     * 主要负责后台`API`开发。
@@ -95,7 +119,7 @@ layout: resume
 
   - *s*{:.project-circle}**[MyPortal 门户网站](https://myportal.singtel.com/web/guest/home)**{:.project-title} **(JAVA工程师)**
     * `MyPortal`是新加坡电信（Singtel）的服务整合门户网站，提供类似单点登陆的服务，其中整合了Singtel邮件服务, 云存储服务等。项目采用开源，成熟的企业级门户网站产品 [Liferay][Liferay]。该产品支持模块化开发，热部署，方便开发新功能。
-      * 使用Jenkins搭建了一套一键式测试，线上部署的环境，提高工作效率并减少机械而导致出错。
+      * 使用Jenkins搭建了一套一键式测试，以及线上部署的环境，提高工作效率并减少机械操作而导致出错。
       * 使用`Nagios`搭建一个监控系统，实时监控服务器的物理状况（`CPU`，内存等的使用情况），应用程序健康情况（`DB`连接，`HTTP`响应，异常日志监控等）,极大提高了系统的可用性。
       * 扩展`Nagios`支持长时间任务，使得`Nagios`可以支持远程服务重启。
       * 基于`React Native`开发一手机`APP`(`NagiosMessager`)，使用`Nagios`提供的`API`获取监控状态。从而更加方便监控和管理应用服务。
@@ -172,3 +196,13 @@ layout: resume
 [EC2]: https://aws.amazon.com/ec2/ "Amazon Elastic Compute Cloud"
 [SQS]: https://aws.amazon.com/sqs/ "Amazon Simple Queue Service"
 [Lambda]: https://aws.amazon.com/lambda/features/ "Amazon Lambda"
+
+[Kubernetes]: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ "Kubernetes"
+[Swarm]: https://docs.docker.com/engine/swarm/ "Swarm"
+
+[EhCache]: http://www.ehcache.org/ "JAVA’S MOST WIDELY-USED CACHEE"
+[MyBatis]: http://www.mybatis.org/mybatis-3/zh/index.html "MyBatis is a first class persistence framework with support for custom SQL, stored procedures and advanced mappings."
+[Swagger]: https://swagger.io/ "The Best APIs are Built with Swagger Tools"
+
+[Elasticsearch]: https://www.elastic.co/ "Elasticsearch is a highly scalable open-source full-text search and analytics engine."
+
