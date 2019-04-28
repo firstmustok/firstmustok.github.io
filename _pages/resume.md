@@ -29,7 +29,7 @@ layout: resume
 {:.section}
   - **个人信息:** {{page.author}} / 男 / 1986
   - **毕业院校:** 本科 / 武汉大学 / 计算机科学与技术
-  - **工作年限:** 7年
+  - **工作年限:** {{"now" | date: "%Y%m" | minus: "201007" | divided_by: 100 }}年
   - **GitHub:** [https://www.github.com/{{github}}](https://www.github.com/{{github}})
 {:.basic}
 
